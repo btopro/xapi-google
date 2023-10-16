@@ -12,7 +12,7 @@ const schema = {
   },
   required: ["foo"],
   additionalProperties: false,
-}
+} 
 
 const data = {
 //  foo: 1,
