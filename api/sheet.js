@@ -25,7 +25,6 @@ const valid = validate(data)
 console.log(valid);
 if (!valid) console.log(validate.errors)
 
-
   //sample xapi statement
   var objectStatement = {
     "actor": {
