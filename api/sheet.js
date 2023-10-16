@@ -57,7 +57,15 @@ if (!valid) console.log(validate.errors)
 
 //Orig - good start here
 const auth = new google.auth.GoogleAuth();
-import secretKey from './service_account_credentials.json';
+
+//remove this for production
+///import secretKey from './service_account_credentials.json';
+
+const secretKey = {
+  "private_key": process.env.private_key.split(String.raw`\n`).join('\n'),
+  "client_email": process.env.client_email
+}
+
 const jwtClient = new google.auth.JWT(
   secretKey.client_email, null,
   secretKey.private_key,  ['https://www.googleapis.com/auth/spreadsheets']);
